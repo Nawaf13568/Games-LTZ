@@ -100,7 +100,7 @@ client.on('message', message => {
     fs.writeFile('points.json', JSON.stringify(points), (err) => {
         if (err) console.error(err);
     })
-	    if (message.content == "احسب") {    
+	    if (message.content == "رياضيات") {    
         var x = ['50×50', '1000000×1', '89×10', '90×5', '30×3', '10×10', '1000×1000', '44,5+44,5'];
 		var x2 = ['2500', '1000000', '890', '450', '90', '100', '1000000' , '89'];
         var x3 = Math.floor(Math.random()*x.length)
@@ -204,7 +204,8 @@ client.on('message', message => {
     }
     fs.writeFile('points.json', JSON.stringify(points), (err) => {
         if (err) console.error(err);
-    });
+
+});
 
 	
 	
