@@ -65,7 +65,7 @@ client.on('message', message => {
         r.then(s=> {
  
         points[message.author.id].points +=1
-            message.channel.send(`${member} لقد قمت بكتابة الجواب الصحيح بالوقت المناسب
+            message.channel.send(`✅ لقد قمت بكتابة الجواب الصحيح بالوقت المناسب
  ─═════**{ نقاطك :${points[message.author.id].points }}**═════─`);
                message.channel.sendEmbed(embed)
         })
