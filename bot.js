@@ -46,7 +46,6 @@ client.on('message', message => {
         .addField(`نقاطك : ${points[message.author.id].points}`,'FiKO || ໑ڪــɹ̤ᓅ',   true) 
         .setColor('RANDOM')
         .setFooter('Games', client.user.avatarURL);
-		.setDescription("By : FiKO || ໑ڪــɹ̤ᓅ ")
         message.channel.sendEmbed(embed)
     };
     if (message.content == "فكك") {    
