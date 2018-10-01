@@ -43,14 +43,14 @@ client.on('message', message => {
     if (message.content == 'نقاطي'){
         var embed = new Discord.RichEmbed()
         .setAuthor(message.author.username,message.author.avatarURL)
-        .addField(` نقاطك : ${points[message.author.id].points}`)
+        .addField(`نقاطك : ${points[message.author.id].points || 0}`)   
         .setColor('RANDOM')
         .setFooter('Games', client.user.avatarURL);
         message.channel.sendEmbed(embed)
     };
     if (message.content == "فكك") {    
-        var x = ['ضفدع', 'طيارة', 'رعودي', 'تفكيك', 'تجربة', 'مدرسة', 'معلم' , 'نقاط' , 'اكسيفو' , 'مكوه' , 'هكونا مطاطا' , 'اكسيفو ذا بيست' , 'محمد الشمراني'];
-        var x2 = ['ض ف د ع', 'ط ي ا ر ة', 'ر ع و د ي', 'ت ف ك ي ك', 'ت ج ر ب ة', 'م د ر س ة', 'م ع ل م', 'ن ق ا ط', 'ا ك س ي ف و', 'م ك و ه', 'ه ك و ن ا م ط ا ط ا', 'ا ك س ي ف و ذ ا ب ي س ت', 'م ح م د ا ل ش م ر ا ن ي'];
+        var x = ['فيكو الحلو', 'طيارة', 'عرفا', 'تفكيك', 'تجربة', 'مدرسة', 'معلم' , 'نقاط' , 'سن' , 'استعن بالله' , 'عدل' , 'جميل جمال' , 'محمد الشمراني' , 'المالديف'];
+        var x2 = ['ف ي ك و ا ل ح ل و', 'ط ي ا ر ة', 'عرفا', 'ت ف ك ي ك', 'ت ج ر ب ة', 'م د ر س ة', 'م ع ل م', 'ن ق ا ط', 'س ن', 'ا س ت ع ن ب ا ل ل ه', 'ع د ل', 'ج م ي ل ج م ا ل', 'م ح م د ا ل ش م ر ا ن ي', 'ا ل م ا ل د ي ف'];
         var x3 = Math.floor(Math.random()*x.length)
         message.channel.send(`فكك الكلمة الآتية : ${x[x3]} لديك 20 ثانية`).then(msg1=> {
             var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
@@ -59,7 +59,7 @@ client.on('message', message => {
                 errors : ['time']
             })
         r.catch(() => {
-            return message.channel.send(' لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح')
+            return message.channel.send('لم يقم احد بتفكيك الكلمة في الوقت المناسب')
                     message.channel.sendEmbed(embed)
         })
         r.then(s=> {
@@ -78,14 +78,14 @@ client.on('message', message => {
         var x = ['ض ف د ع', 'ط ي ا ر ة', 'ر ع و د ي', 'ت ف ك ي ك', 'ت ج ر ب ة', 'م د ر س ة', 'م ع ل م', 'ن ق ا ط', 'ا ك س ي ف و', 'م ك و ه', 'ر و ق ن'];
         var x2 = ['ضفدع', 'طيارة', 'رعودي', 'تفكيك', 'تجربة', 'مدرسة', 'معلم' , 'نقاط' , 'اكسيفو' , 'مكوه' , 'هكونا مطاطا' , 'روقن'];
         var x3 = Math.floor(Math.random()*x.length)
-        message.channel.send(`ركب الكلمة  الآتية : ${x[x3]} لديك 20 ثانية`).then(msg1=> {
+        message.channel.send(`ركب الأحرف الآتية  :  ${x[x3]}  لديك 20 ثانية`).then(msg1=> {
             var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
                 maxMatches : 1,
                 time : 20000,
                 errors : ['time']
             })
         r.catch(() => {
-            return message.channel.send(' لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح')
+            return message.channel.send('لم يقم احد بتركيب الحروف في الوقت المناسب')
                     message.channel.sendEmbed(embed)
         })
         r.then(s=> {
@@ -101,8 +101,8 @@ client.on('message', message => {
         if (err) console.error(err);
     })
         if (message.content == "احسب") {    
-        var x = ['50×50', '1000000×1', '89×10', '90×5', '30×3', '10×10', '1000×1000', '44.5+44.5'];
-        var x2 = ['2500', '1000000', '890', '450', '90', '100', '1000000' , '89'];
+        var x = ['50×50', '1000000×1', '89×10', '90×5', '30×3', '10×10', '1000×1000', '44.5+44.5', '3500 ÷ 385', '3500 ÷ 588'];
+        var x2 = ['2500', '1000000', '890', '450', '90', '100', '1000000' , '89' , '9' , '5'];
         var x3 = Math.floor(Math.random()*x.length)
         message.channel.send(`اسحب الارقام الآتية : ${x[x3]} لديك 20 ثانية`).then(msg1=> {
             var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
@@ -111,7 +111,7 @@ client.on('message', message => {
                 errors : ['time']
             })
         r.catch(() => {
-            return message.channel.send(' لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح')
+            return message.channel.send('لم يقم احد بالعملية الحسابية الصحيحة')
                     message.channel.sendEmbed(embed)
         })
         r.then(s=> {
@@ -138,7 +138,7 @@ client.on('message', message => {
                 errors : ['time']
             })
         r.catch(() => {
-            return message.channel.send(' لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح')
+            return message.channel.send('لم يقم احد بكتابة العاصمة الصحيحة في الوقت المناسب')
                message.channel.sendEmbed(embed)
         })
         r.then(s=> {
@@ -164,7 +164,7 @@ client.on('message', message => {
                 errors : ['time']
             })
         r.catch(() => {
-            return message.channel.send(' لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح')
+            return message.channel.send('لم يقم احد بحل اللغز في الوقت المناسب')
                message.channel.sendEmbed(embed)
         })
         r.then(s=> {
@@ -190,7 +190,7 @@ client.on('message', message => {
                 errors : ['time']
             })
         r.catch(() => {
-            return message.channel.send(' لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح')
+            return message.channel.send(' لم يقم احد بترتيب الحروف في الوقت المناسب')
                     message.channel.sendEmbed(embed)
         })
         r.then(s=> {
@@ -230,8 +230,8 @@ client.on('message', message => {
  
 قم بحل الألغاز ➼ لغز
  
-قم بترتيب الحروف ➼ رتب
-
+قم بتجميع الحروف ➼ رتب
+ 
 لعرض النقاط الخاصة بك ➼ نقاطي
  
  ✧▬▬▬▬▬ BOT Games ▬▬▬▬▬✧`)
