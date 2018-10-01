@@ -43,9 +43,10 @@ client.on('message', message => {
     if (message.content == 'نقاطي'){
         var embed = new Discord.RichEmbed()
         .setAuthor(message.author.username,message.author.avatarURL)
-        .addField(`نقاطك : ${points}`)   
+        .addField(`نقاطك : ${points[message.author.id].points}`,'FiKO || ໑ڪــɹ̤ᓅ',   true) 
         .setColor('RANDOM')
         .setFooter('Games', client.user.avatarURL);
+		.setFooter("By : FiKO || ໑ڪــɹ̤ᓅ ")
         message.channel.sendEmbed(embed)
     };
     if (message.content == "فكك") {    
