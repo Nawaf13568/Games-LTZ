@@ -43,7 +43,7 @@ client.on('message', message => {
     if (message.content == 'نقاطي'){
         var embed = new Discord.RichEmbed()
         .setAuthor(message.author.username,message.author.avatarURL)
-        .addField(`نقاطك : ${points[message.author.id].points || 0}`)   
+        .addField(`نقاطك : ${points}`)   
         .setColor('RANDOM')
         .setFooter('Games', client.user.avatarURL);
         message.channel.sendEmbed(embed)
