@@ -33,7 +33,7 @@ client.on('ready', () => {
  
  
 client.on('ready', () => {
-  client.user.setGame(`!help | MALDYF`,'https://www.twitch.tv/v5bz');
+  client.user.setGame(`العاب | MALDYF`,'https://www.twitch.tv/v5bz');
 });
  
  
@@ -65,9 +65,9 @@ client.on('message', message => {
         r.then(s=> {
  
         points[message.author.id].points +=1
-            message.channel.send(`${message.author} صاحب الإجابة  : 
-			لقد قمت بكتابة الجواب الصحيح ☻ 
- {نقاطك : ⇤ ${points[message.author.id].points }} ⇥`);
+            message.channel.send(`${message.author} : صاحب الإجابة 
+☻ لقد قمت بكتابة الجواب الصحيح ☻
+نقاطك : ⇥ ${points[message.author.id].points } ⇤`);
                message.channel.sendEmbed(embed)
         })
         })
@@ -216,7 +216,7 @@ client.on('message', message => {
    
    
     client.on("message", message => {
- if (message.content === "!help") {
+ if (message.content === "العاب") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(` ✧▬▬▬▬▬ BOT Games ▬▬▬▬▬✧
