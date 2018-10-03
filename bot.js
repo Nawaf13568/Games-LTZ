@@ -65,8 +65,9 @@ client.on('message', message => {
         r.then(s=> {
  
         points[message.author.id].points +=1
-            message.reply(` لقد قمت بكتابة الجواب الصحيح بالوقت المناسب
- ─═════**{ نقاطك :${points[message.author.id].points }}**═════─`);
+            message.channel.send(`${message.author} صاحب الإجابة  : 
+			لقد قمت بكتابة الجواب الصحيح ☻ 
+ {نقاطك : ⇤ ${points[message.author.id].points }} ⇥`);
                message.channel.sendEmbed(embed)
         })
         })
