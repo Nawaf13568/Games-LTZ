@@ -30,17 +30,6 @@ client.on('ready', () => {
 });
  
  
- client.on('message', message => {
-    if (message.content.startsWith('هلا')) {
-        message.channel.send("هلا ولله")
-
-  let hla = message.guild.channels.find("name", "bot").send(`
-  الشخص 
-    ${message.author.username}
-    كتب هلا
-  `)
-    }
-});
  
 client.on('ready', () => {
   client.user.setGame(`العاب | MALDYF`,'https://www.twitch.tv/v5bz');
