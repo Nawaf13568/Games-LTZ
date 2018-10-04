@@ -53,7 +53,7 @@ client.on('message', message => {
         var x2 = ['ف ي ك و ا ل ح ل و', 'ط ي ا ر ة', 'عرفا', 'ت ف ك ي ك', 'ت ج ر ب ة', 'م د ر س ة', 'م ع ل م', 'ن ق ا ط', 'س ن', 'ا س ت ع ن ب ا ل ل ه', 'ع د ل', 'ج م ي ل ج م ا ل', 'م ح م د ا ل ش م ر ا ن ي', 'ا ل م ا ل د ي ف'];
         var x3 = Math.floor(Math.random()*x.length)
         message.channel.send(` نوع اللعبة : فكك
-فكك الكلمة الآتية :  ⇥  ${x[x3]} ⇤
+فكك الكلمة الآتية :   ⇤${x[x3]}⇥
 الوقت : 20 ثانية`).then(msg1=> {
             var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
                 maxMatches : 1,
@@ -64,7 +64,7 @@ client.on('message', message => {
             return message.channel.send('لم يقم احد بتفكيك الكلمة في الوقت المناسب')
                     message.channel.sendEmbed(embed)
         })
-        r.then(s=> {
+        r.then(s=> { 
  
         points[message.author.id].points +=1
             message.channel.send(`${message.author} : صاحب الإجابة 
